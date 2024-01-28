@@ -3,19 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        /*CSS Zone*/
-        body{
-            color: white;
-            background-color: #222222;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Convert Temperature App</title>
 </head>
 <body>
-    <h1>JavaScript</h1>
-    
+    <header>
+        <h1 id="title">Convert Temperature App</h1>
+    </header>
+    <main class="container">
+        <div class="card-container">
+            <div>
+                <img src="./img/_2f3b260e-36e6-400a-a7d1-5fc999d07fbb.jpg" alt="">
+            </div>
+            <h1>Convert Celsius to Fahrenheit</h1>
+            <div class="card-info">
+                <div class="results-zone">
+                    <p id="resultCTF">0</p>
+                </div>
+                <button onclick="celTofar()">Convert</button>
+            </div>
+        </div>
+        
+        <div class="card-container">
+            <div>
+                <img src="./img/_ad5decf2-69be-42f7-bb07-066bfbcfc185.jpg" alt="">
+            </div>
+            <h1>Convert Fahrenheit to Celsius</h1>
+            <div class="card-info">
+                <div class="results-zone">
+                    <p id="resultFTC">0</p>
+                </div>
+                <button onclick="farTocel()">Convert</button>
+            </div>
+        </div>
+        
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>
