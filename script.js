@@ -1,11 +1,14 @@
-function celTofar(){
-    let cel = prompt("Enter the temperature in Celsius degrees: ");
-    let far = (cel * 9/5) + 32;
-    document.getElementById("resultCTF").innerHTML = far +" F";
+function convertTemperature() {
+    const temperature = parseFloat(document.getElementById('inputTemperature').value);
+    const unit = document.getElementById('unitSelect').value;
+
+    let result;
+    if (unit === 'celsius') {
+        result = (temperature * 9/5) + 32;
+        document.getElementById('resultContainer').innerHTML = `<span class="underline">${result.toFixed(2)} F</span>`;
+    } else if (unit === 'fahrenheit') {
+        result = (temperature - 32) * 5/9;
+        document.getElementById('resultContainer').innerHTML = `<span class="underline">${result.toFixed(2)} C</span>`;
+    }
 }
 
-function farTocel(){
-    let far = prompt("Enter the temperature in Fahrenheit degrees: ");
-    let cel = (far - 32) * 5/9;
-    document.getElementById("resultFTC").innerHTML = cel +" C";
-}

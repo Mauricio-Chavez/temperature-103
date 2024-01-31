@@ -5,9 +5,12 @@ let counter = 0;
 // 1)creating the function
 function increase() {
     counter++;
+    if(counter == 5){
+        console.log('yeahhhhh')
+    }
     console.log(counter);
-    // alert('Hi');
-    // document.write('Hi');
+
+    
 }
 function decrease() {
     counter--;

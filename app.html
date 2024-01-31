@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Convert Temperature App</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="converter-container">
+                <h1 id="title">Temperature Converter</h1>
+                <label for="unitSelect">Select the Unit to Enter</label>
+                <select id="unitSelect">
+                    <option value="" disabled selected hidden >Select the Unit</option>
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                </select>
+        
+                <label for="inputTemperature">Enter the temperature</label>
+                <input type="number" id="inputTemperature" placeholder="  Ingrese la temperatura" required>
+        
+                <button class="btn" onclick="convertTemperature()">Convert</button>
+            </div>
+    
+            <div class="rt-container">
+                <div class="r-container" id="resultContainer">
+
+                </div>
+                <!-- <div class="t-container">
+                    <div class="thermometer">
+                        <div class="thermometer-mercury" id="mercury"></div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
