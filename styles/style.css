@@ -129,14 +129,7 @@ label{
     overflow: hidden;
     border: black 2px solid;
 }
-.converter-container p{
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 0.3rem;
-    color: purple;
-    text-align: center;
 
-}
 .thermometer-mercury {
     position: absolute;
     bottom: 0;
