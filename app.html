@@ -18,25 +18,26 @@
                     <option value="fahrenheit">Fahrenheit</option>
                 </select>
         
-                <label for="inputTemperature">Enter the temperature</label>
-                <input type="number" id="inputTemperature" placeholder="  Ingrese la temperatura" required>
-        
+                <label for="inputTemperature" id="marTitle">Enter the Range of Temperature to Convert</label>
+                <input type="number" class="inputTemperature" id="minimum" placeholder="Minimum" required>
+                <input type="number" class="inputTemperature" id="maximum" placeholder="Maximum" required>
                 <button class="btn" onclick="convertTemperature()">Convert</button>
+                <p>The limit for the thermometer to function is 100 Celsius or 212 Fahrenheit.</p>
             </div>
     
             <div class="rt-container">
                 <div class="r-container" id="resultContainer">
 
                 </div>
-                <!-- <div class="t-container">
-                    <div class="thermometer">
-                        <div class="thermometer-mercury" id="mercury"></div>
+                <div class="t-container">
+                    <div class="thermometer" id="thermometer">
+                        
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         
-    </main>
+</main>
     <script src="./script.js"></script>
 </body>
 </html>
