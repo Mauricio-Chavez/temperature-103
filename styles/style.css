@@ -113,6 +113,13 @@ label{
     letter-spacing: 0.3rem;
     color: blue;
 }
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    gap: 1rem;
+}
 .thermometer {
     position: relative;
     width: 40px;
@@ -142,6 +149,40 @@ label{
     transform: scaleY(0.7); 
     transition: transform 0.5s ease;
 }
+#previousPageButton{
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 0.3rem;
+    font-weight: bold;
+
+
+}
+#nextPageButton{
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: green;
+    border: none;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 0.3rem;
+    font-weight: bold;
+}
+#currentPage{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    color: white;
+    text-align: center;
+
+}
 .highlighting-red{
     color: red;
 
@@ -160,7 +201,6 @@ label{
     justify-content: center;
     height: 80%;
     font-size: 2rem;
-    overflow-y: auto;
     border-radius: 1rem;
     box-shadow: #0616ff 0 0 10px 0;
     color: black;

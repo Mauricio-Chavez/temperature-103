@@ -1,19 +1,60 @@
+let currentPage = 0;
+let itemsPerPage = 4; 
+let results = [];
+document.getElementById('previousPageButton').addEventListener('click', previousPage);
+document.getElementById('nextPageButton').addEventListener('click', nextPage);
+
+function showPage(page) {
+    let start = page * itemsPerPage;
+    let end = start + itemsPerPage;
+    let paginatedItems = results.slice(start, end);
+
+    let resultContainer = document.getElementById('resultContainer');
+    resultContainer.innerHTML = ''; 
+
+    for(let item of paginatedItems) {
+        resultContainer.appendChild(item);
+    }
+    document.getElementById('currentPage').textContent = 'Page: ' + (page + 1);
+}
+
+
+function nextPage() {
+    currentPage++;
+    showPage(currentPage);
+}
+
+
+function previousPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+
 function convertTemperature() {
-    
     const unit = document.getElementById('unitSelect').value;
     const minimumTemperature = parseFloat(document.getElementById('minimum').value);
     const maximumTemperature = parseFloat(document.getElementById('maximum').value);
     let counter = 0;
 
+    let resultContainer = document.getElementById('resultContainer');
+    resultContainer.innerHTML = ''; 
     let result;
+    results = [];
+
     if (unit === 'celsius') {
-        document.getElementById('resultContainer').innerHTML = '';
         counter = 0;
         for(let currentTemperature = minimumTemperature; currentTemperature <= maximumTemperature; currentTemperature++) {
             counter++;
             result = (currentTemperature * 9/5) + 32;
-            document.getElementById('resultContainer').innerHTML += `<p> The coversion <span class="highlighting-blue">Number ${counter}</span> of Celsius <span class="highlighting-red">${currentTemperature} C</span> to Fahrenheit <span class="underline highlighting-green">${result} F</span></p>`;
+            let newElement = document.createElement('p');
+            newElement.innerHTML = `The conversion <span class="highlighting-blue">Number ${counter}</span> of Celsius <span class="highlighting-red">${currentTemperature} C</span> to Fahrenheit <span class="underline highlighting-green">${result} F</span>`;
+            resultContainer.appendChild(newElement);
+            results.push(newElement);
         }
+        
         mercury= (maximumTemperature *435)/100;
         
         if (maximumTemperature <= 20){
@@ -30,13 +71,16 @@ function convertTemperature() {
             document.getElementById('thermometer').innerHTML = `<div class="thermometer-mercury" id="mercury" style="height: 435px; background-color: purple;"></div>`
         }
     } else if (unit === 'fahrenheit') {
-        document.getElementById('resultContainer').innerHTML = '';
         counter = 0;
         for(let currentTemperature = minimumTemperature; currentTemperature <= maximumTemperature; currentTemperature++) {
             counter++;
             result = (currentTemperature - 32) * 5/9;
-            document.getElementById('resultContainer').innerHTML += `<p> The coversion <span class="highlighting-blue">Number ${counter}</span> of Fahrenheit <span class="highlighting-red">${currentTemperature} F</span> to Celsius <span class="underline highlighting-green">${result.toFixed(2)} C</span></p>`;
+            let newElement = document.createElement('p');
+            newElement.innerHTML = `The conversion <span class="highlighting-blue">Number ${counter}</span> of Fahrenheit <span class="highlighting-red">${currentTemperature} F</span> to Celsius <span class="underline highlighting-green">${result.toFixed(2)} C</span>`;
+            resultContainer.appendChild(newElement);
+            results.push(newElement);
         }
+        
         mercury= (maximumTemperature *435)/212;
         console.log(mercury);
         if (maximumTemperature <= 43){
@@ -57,6 +101,7 @@ function convertTemperature() {
             document.getElementById('thermometer').innerHTML = `<div class="thermometer-mercury" id="mercury" style="height: 435px; background-color: purple;"></div>`
         }
     }
+    showPage(0);
 }
 
 
