@@ -8,6 +8,7 @@ function convertTemperature() {
     let result;
     if (unit === 'celsius') {
         document.getElementById('resultContainer').innerHTML = '';
+        counter = 0;
         for(let currentTemperature = minimumTemperature; currentTemperature <= maximumTemperature; currentTemperature++) {
             counter++;
             result = (currentTemperature * 9/5) + 32;
@@ -30,6 +31,7 @@ function convertTemperature() {
         }
     } else if (unit === 'fahrenheit') {
         document.getElementById('resultContainer').innerHTML = '';
+        counter = 0;
         for(let currentTemperature = minimumTemperature; currentTemperature <= maximumTemperature; currentTemperature++) {
             counter++;
             result = (currentTemperature - 32) * 5/9;
